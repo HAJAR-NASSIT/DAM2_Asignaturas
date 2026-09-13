@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NumeroPrimo</string>
+    <string name="introduction">Introduce el numero primo :</string>
+    <string name="number_text">Tu número :</string>
+    <string name="btn_comprobar">Comprobar</string>
+    <string name="btn_reiniciar">Rieniciar</string>
+    <string name="prime_message">Es un número primo</string>
+    <string name="not_prime_message">No es un número primo</string>
+</resources>
