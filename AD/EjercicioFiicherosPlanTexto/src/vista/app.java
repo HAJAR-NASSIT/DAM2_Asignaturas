@@ -20,6 +20,7 @@ public class app extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private ArrayList<Mensaje> mensajes;
 
 	/**
 	 * Launch the application.
@@ -41,6 +42,7 @@ public class app extends JFrame {
 	 * Create the frame.
 	 */
 	public app() {
+		mensajes = new ArrayList<Mensaje>();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -49,17 +51,33 @@ public class app extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnSalir.setBounds(153, 211, 125, 23);
 		contentPane.add(btnSalir);
 		
 		JButton btnImprimir = new JButton("imprimir mensajes");
+		btnImprimir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ImprimirMensajes ventana = new ImprimirMensajes(mensajes);
+				ventana.setVisible(true);
+			}
+		});
 		btnImprimir.setBounds(153, 177, 125, 23);
 		contentPane.add(btnImprimir);
 		
 		JButton btnCargar = new JButton("Cargar mensajes");
 		btnCargar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GestionarFicheros m = new GestionarFicheros();
+			try {
+				mensajes=GestionarFicheros.CargarMensaje();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 				
 			}
 		});
@@ -69,10 +87,9 @@ public class app extends JFrame {
 		JButton btnGuardar = new JButton("Guardar mensajes");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GestionarFicheros m = new GestionarFicheros();
+				
 				try {
-					ArrayList<Mensaje> mensajes= GestionarFicheros.CargarMensaje();
-					m.GuardarMensaje(mensajes);
+					GestionarFicheros.GuardarMensaje(mensajes);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -85,6 +102,12 @@ public class app extends JFrame {
 		contentPane.add(btnGuardar);
 		
 		JButton btnAnadir = new JButton("Añadir mensajes");
+		btnAnadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AnadirMensaje ventana = new AnadirMensaje(mensajes);
+				ventana.setVisible(true);
+			}
+		});
 		btnAnadir.setBounds(153, 75, 125, 23);
 		contentPane.add(btnAnadir);
 
