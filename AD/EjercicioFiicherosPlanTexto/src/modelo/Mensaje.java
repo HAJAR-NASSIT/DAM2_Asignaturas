@@ -1,80 +1,86 @@
 package modelo;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Mensaje {
 
-	private String fecha;
-	private String hora;
-	private String para;
-	private String de;
-	private String asunto;
-	private String Contenido;
+    private LocalDate fecha;
+    private LocalTime hora;
+    private String para;
+    private String de;
+    private String asunto;
+    private String contenido;
 
-	public Mensaje() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public Mensaje() {
+    }
 
-	public Mensaje(String fecha, String hora, String para, String de, String asunto, String contenido) {
-		this.fecha = fecha;
-		this.hora = hora;
-		this.para = para;
-		this.de = de;
-		this.asunto = asunto;
-		Contenido = contenido;
-	}
+    public Mensaje(LocalDate fecha, LocalTime hora, String para,
+            String de, String asunto, String contenido) {
 
-	public String getFecha() {
-		return fecha;
-	}
+        this.fecha = fecha;
+        this.hora = hora;
+        this.para = para;
+        this.de = de;
+        this.asunto = asunto;
+        this.contenido = contenido;
+    }
 
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
+    public LocalDate getFecha() {
+        return fecha;
+    }
 
-	public String getHora() {
-		return hora;
-	}
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
 
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
+    public LocalTime getHora() {
+        return hora;
+    }
 
-	public String getNombre() {
-		return para;
-	}
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
 
-	public void setNombre(String nombre) {
-		this.para = nombre;
-	}
+    public String getPara() {
+        return para;
+    }
 
-	public String getCiudad() {
-		return de;
-	}
+    public void setPara(String para) {
+        this.para = para;
+    }
 
-	public void setCiudad(String ciudad) {
-		this.de = ciudad;
-	}
+    public String getDe() {
+        return de;
+    }
 
-	public String getAsunto() {
-		return asunto;
-	}
+    public void setDe(String de) {
+        this.de = de;
+    }
 
-	public void setAsunto(String asunto) {
-		this.asunto = asunto;
-	}
+    public String getAsunto() {
+        return asunto;
+    }
 
-	public String getContenido() {
-		return Contenido;
-	}
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
+    }
 
-	public void setContenido(String contenido) {
-		Contenido = contenido;
-	}
+    public String getContenido() {
+        return contenido;
+    }
 
-	@Override
-	public String toString() {
-		return "fecha:" + fecha + "\n hora:" + hora + "\n para:" + para + "\n de:" + de + "\n asunto:" + asunto
-				+ "\n Contenido:" + Contenido + "]";
-	}
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
 
+    @Override
+    public String toString() {
+        return "fecha:" + fecha + "\n"
+                + "hora:" + hora + "\n"
+                + "para:" + para + "\n"
+                + "de:" + de + "\n"
+                + "asunto:" + asunto + "\n"
+                + "contenido:" + contenido;
+    }
 }
