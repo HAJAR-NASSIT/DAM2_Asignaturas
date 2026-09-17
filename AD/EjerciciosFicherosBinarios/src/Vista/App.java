@@ -6,24 +6,34 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Modelo.Partido;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import javax.swing.table.DefaultTableModel;
 
 public class App extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField textEquipoLocal;
+	private JTextField textEquipoVisitante;
+	private JTextField textGolesLocales;
+	private JTextField textGolesVisitantes;
+	private JTextField textLugar;
+	private JTextField textFecha;
 	private JTable table;
-
+	private DefaultTableModel modeloTabla;
+	private ArrayList<Partido> listaPartidos = new ArrayList<>();
 	/**
 	 * Launch the application.
 	 */
@@ -45,7 +55,7 @@ public class App extends JFrame {
 	 */
 	public App() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 434);
+		setBounds(100, 100, 529, 525);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -75,37 +85,44 @@ public class App extends JFrame {
 		lblFecha.setBounds(10, 181, 46, 14);
 		contentPane.add(lblFecha);
 		
-		textField = new JTextField();
-		textField.setBounds(173, 11, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textEquipoLocal = new JTextField();
+		textEquipoLocal.setBounds(173, 11, 86, 20);
+		contentPane.add(textEquipoLocal);
+		textEquipoLocal.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(173, 44, 86, 20);
-		contentPane.add(textField_1);
+		textEquipoVisitante = new JTextField();
+		textEquipoVisitante.setColumns(10);
+		textEquipoVisitante.setBounds(173, 44, 86, 20);
+		contentPane.add(textEquipoVisitante);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(173, 80, 86, 20);
-		contentPane.add(textField_2);
+		textGolesLocales = new JTextField();
+		textGolesLocales.setColumns(10);
+		textGolesLocales.setBounds(173, 80, 86, 20);
+		contentPane.add(textGolesLocales);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(173, 116, 86, 20);
-		contentPane.add(textField_3);
+		textGolesVisitantes = new JTextField();
+		textGolesVisitantes.setColumns(10);
+		textGolesVisitantes.setBounds(173, 116, 86, 20);
+		contentPane.add(textGolesVisitantes);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(173, 147, 86, 20);
-		contentPane.add(textField_4);
+		textLugar = new JTextField();
+		textLugar.setColumns(10);
+		textLugar.setBounds(173, 147, 86, 20);
+		contentPane.add(textLugar);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(173, 178, 86, 20);
-		contentPane.add(textField_5);
+		textFecha = new JTextField();
+		textFecha.setColumns(10);
+		textFecha.setBounds(173, 178, 86, 20);
+		contentPane.add(textFecha);
 		
 		JButton btnAñadir = new JButton("Añadir");
+		btnAñadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				anadirPartidos();
+			}
+
+			
+		});
 		btnAñadir.setBounds(34, 225, 89, 23);
 		contentPane.add(btnAñadir);
 		
@@ -118,12 +135,85 @@ public class App extends JFrame {
 		contentPane.add(btnGuardar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 2, 2);
+		scrollPane.setBounds(10, 289, 493, 95);
+
+		table = new JTable();
+		
+		modeloTabla=new DefaultTableModel(
+				new Object[][] {
+				},
+				new String[] {
+						  "Equipo Local", "Equipo Visitante", "Goles Local", "Goles Visitante", "Lugar", "Fecha"
+				});
+		table.setModel(modeloTabla);
+		table.setBounds(10, 289, 10, 10);
+		
+		scrollPane.setViewportView(table);
 		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.setBounds(0, 0, 1, 1);
-		contentPane.add(table);
-
+	}
+	
+	
+	private void anadirPartidos() {
+		String txtLocal = textEquipoLocal.getText().trim();
+		String txtVis =  textEquipoVisitante.getText().trim();
+		String txtGlesLocal =textGolesLocales.getText().trim();
+		String txtGlesVis = textGolesVisitantes .getText().trim();
+		String txtLugar =textLugar.getText().trim();
+		String txtFecha = textFecha.getText().trim();
+		
+		String regexTextos = "^[a-zA-Z0-9 ]{1,20}$";
+		String regexGoles = "^[1-9]{1,2}$";
+		 String regexFecha = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/[0-9]{2}$";
+		 
+		 if(!txtLocal.matches(regexTextos) || !txtVis.matches(regexTextos) || !txtLugar.matches(regexTextos)) {
+			 JOptionPane.showMessageDialog(null, "Hay que introducir valores De 1 a 20 caracteres y números");
+			 return;
+		 }
+		 if(!txtGlesLocal.matches(regexGoles) || !txtGlesVis.matches(regexGoles)) {
+			 JOptionPane.showMessageDialog(null, "Hay que introducir valores Números de 1 a 2 dígitos.");
+			 return;
+		 }
+		 if(!txtFecha.matches(regexFecha)) {
+			 JOptionPane.showMessageDialog(null, "el formato de la fecha es dd/MM/yy");
+			 return;
+		 }
+		 
+		 int golesL = Integer.parseInt(txtGlesLocal);
+		 int golesVis=Integer.parseInt(txtGlesVis);
+		  java.time.format.DateTimeFormatter formateador = java.time.format.DateTimeFormatter.ofPattern("d/M/yy");
+		    LocalDate fecha = LocalDate.parse(txtFecha, formateador);
+		 
+		 Partido nuevoPartido = new Partido(txtLocal,txtVis,golesL,golesVis,txtLugar,fecha);
+		 listaPartidos.add(nuevoPartido);
+		 
+		 modeloTabla.setRowCount(0);
+		 for (Partido p : listaPartidos) {
+			 Object[] fila = {
+		                p.getEquipoLocal(),
+		                p.getEquipoVisitante(),
+		                p.getGolesLocal(),
+		                p.getGolesVisitante(),
+		                p.getLugar(),
+		                p.getFecha()
+		            };
+			 modeloTabla.addRow(fila);
+			 
+			// 5. Blanquear/Limpiar los campos de texto
+			 textEquipoLocal.setText("");
+			 textEquipoVisitante.setText("");
+			 textGolesLocales.setText("");
+			 textGolesVisitantes.setText("");
+			 textLugar.setText("");
+			 textFecha.setText("");
+		        
+		        JOptionPane.showMessageDialog(null, "Partido añadido correctamente.");
+		}
+		 
+		 
+		 
+		 
+		 
+		 
 	}
 }
