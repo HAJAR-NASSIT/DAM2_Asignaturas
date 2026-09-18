@@ -1,0 +1,2 @@
+"comando_que_no_existe" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.

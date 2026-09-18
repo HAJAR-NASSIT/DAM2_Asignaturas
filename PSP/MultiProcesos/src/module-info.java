@@ -4,6 +4,6 @@
 /**
  * 
  */
-module EjercicioFiicherosPlanTexto {
+module MultiProcesos {
 	requires java.desktop;
 }
