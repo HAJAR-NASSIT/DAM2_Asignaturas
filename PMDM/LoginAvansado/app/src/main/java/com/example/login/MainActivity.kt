@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var username : EditText
     lateinit var password : EditText
     lateinit var button_Login : Button
+    var intentos = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,12 @@ class MainActivity : AppCompatActivity() {
         {
             Toast.makeText(this, "Login succeful", Toast.LENGTH_SHORT).show()
         }else{
-            Toast.makeText(this, "Login failed!!", Toast.LENGTH_SHORT).show()
+            intentos++
+            Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
+            if(intentos == 3){
+               binding.loginButton.isEnabled=false
+                Toast.makeText(this, "has superado el maximo de intentos", Toast.LENGTH_SHORT).show()
+            }
         }
 
         })

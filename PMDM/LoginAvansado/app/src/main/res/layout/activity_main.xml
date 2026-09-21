@@ -63,7 +63,7 @@
                 android:textColor="@color/black"
                 tools:ignore="Autofill,HardcodedText,RtlHardcoded,TextFields,TextContrastCheck,VisualLintTextFieldSize" />
 
-            <Button 
+            <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
