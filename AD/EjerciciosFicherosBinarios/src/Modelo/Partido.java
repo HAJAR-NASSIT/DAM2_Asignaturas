@@ -1,10 +1,15 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 
-public class Partido {
-    // Atributos de la clase
+public class Partido implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	// Atributos de la clase
     private String equipoLocal;
     private String equipoVisitante;
     private int golesLocal;
