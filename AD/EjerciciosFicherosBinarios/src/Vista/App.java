@@ -1,12 +1,12 @@
 package Vista;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Modelo.GestionFicheros;
 import Modelo.Partido;
 
 import javax.swing.JLabel;
@@ -34,6 +34,7 @@ public class App extends JFrame {
 	private JTable table;
 	private DefaultTableModel modeloTabla;
 	private ArrayList<Partido> listaPartidos = new ArrayList<>();
+	private GestionFicheros gestionFicheros = new GestionFicheros();
 	/**
 	 * Launch the application.
 	 */
@@ -127,10 +128,35 @@ public class App extends JFrame {
 		contentPane.add(btnAñadir);
 		
 		JButton btnCargar = new JButton("Cargar");
+		btnCargar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			listaPartidos =	gestionFicheros.cargarPartidos();
+			modeloTabla= (DefaultTableModel) table.getModel();
+			modeloTabla.setRowCount(0);
+			
+			for ( Partido partido : listaPartidos) {
+				modeloTabla.addRow(new Object[] {
+						partido.getEquipoLocal(),
+						partido.getEquipoVisitante(),
+						partido.getGolesLocal(),
+						partido.getGolesVisitante(),
+						partido.getLugar(),
+						partido.getFecha()
+				});
+			}
+			JOptionPane.showMessageDialog(null,"Los partidos se han cargado correctamente");
+			}
+		});
 		btnCargar.setBounds(170, 225, 89, 23);
 		contentPane.add(btnCargar);
 		
 		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				gestionFicheros.guardarPartidos(listaPartidos);
+				JOptionPane.showMessageDialog(null, "Los partidos se han guardado correctamente");
+			}
+		});
 		btnGuardar.setBounds(302, 225, 89, 23);
 		contentPane.add(btnGuardar);
 		
