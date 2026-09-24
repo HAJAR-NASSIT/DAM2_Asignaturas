@@ -106,3 +106,30 @@ suma, mayor, menor = lista([1,2,3])
 print(suma);print(mayor);print(menor)
 
 """
+""" Crea una lista de 3 números y añade un cuarto.
+Después imprime cada valor por separado, de tres maneras distintas. """
+""" lista=[1,2,3]
+lista.insert(3,4)
+print(lista)
+
+for i in lista:
+    print(i)
+
+print(*lista) """
+
+"""Crea un diccionario con nombre, 
+edad y curso. Muéstralo entero y después imprime sus valores por separado de varias formas.  """
+
+dic = {
+    "nombre": "hajar",
+    "edad": "22",
+    "curso": "DAM"
+}
+
+print(dic)
+
+for clave, valor in dic.items():
+    print(clave, ":" ,valor)
+    
+print(*dic.items(), sep="\n")
+
