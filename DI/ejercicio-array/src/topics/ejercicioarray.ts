@@ -38,10 +38,21 @@ const teléfono : Producto = {
     precio : 140
 }
 const tableta : Producto = {
-     descripcion : "TPHONE",
+    descripcion : "TPHONE",
     precio : 140
 }
 
-const calculaISV = (productos:Producto[]) => 
+const calculaISV = (productos:Producto[]) => {
+    let total= 0;
 
+    for(const producto of productos){
+        total=total+producto.precio
+    }
+    return (total*15)/100
+}
 
+const articulos: Producto[]=[teléfono,tableta]
+
+const isv = calculaISV(articulos)
+
+console.log(isv);
