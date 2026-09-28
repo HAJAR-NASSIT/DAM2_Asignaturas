@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">IntentExplecito</string>
+    <string name="eleccion">Aqui Saldra tu eleccion</string>
+    <string name="selecionar_provincia">SELECCIONA TU PROVINCIA</string>
+    <string name="selecciona_tu_provincia">SELECCIONA TU PROVINCIA</string>
+    <string name="portugalete">Portugalete</string>
+    <string name="zuberoa">Zuberoa</string>
+    <string name="lapurdi">Lapurdi</string>
+    <string name="nafarroa">Nafarroa</string>
+    <string name="araba">Araba</string>
+    <string name="gipuzkoa">Gipuzkoa</string>
+    <string name="bizkaia">Bizkaia</string>
+</resources>

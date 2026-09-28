@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:paddingTop="90dp"
     tools:ignore="UseCompoundDrawables">
 
     <TextView
@@ -28,10 +28,10 @@
 
     <ImageView
         android:id="@+id/walterImagen"
-        android:layout_width="wrap_content"
+        android:layout_width="400dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:src="@drawable/walter_white"
         android:contentDescription="@string/walter_white" />
 
