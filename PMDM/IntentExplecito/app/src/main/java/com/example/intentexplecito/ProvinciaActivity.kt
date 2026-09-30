@@ -18,19 +18,19 @@ class ProvinciaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnProvincia.setOnClickListener {
-            val isSeleccionado= binding.groupProvincias.checkedRadioButtonId
+            val isSeleccionado = binding.groupProvincias.checkedRadioButtonId
                  if(isSeleccionado!=-1) {
-                     val radioButtonSeleccionado = findViewById<RadioButton>(isSeleccionado)
-                     val provinciaTexto = radioButtonSeleccionado.text.toString()
+                         val radioButtonSeleccionado = findViewById<RadioButton>(isSeleccionado)
+                         val provinciaTexto = radioButtonSeleccionado.text.toString()
 
-                     val intentResult = Intent()
-                     intentResult.putExtra("Provincia Key", provinciaTexto)
+                         val intentResult = Intent()
+                         intentResult.putExtra("Provincia Key", provinciaTexto)
 
-                     setResult(RESULT_OK, intentResult)
+                         setResult(RESULT_OK, intentResult)
 
-                     finish()
+                         finish()
                  }else{
-                     finish()
+                         finish()
          }
         }
     }
