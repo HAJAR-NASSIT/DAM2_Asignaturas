@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MiniJuegoPaises</string>
+    <string name="empezar">Empezar</string>
+    <string name="geograf_a_mundial">geografía mundial</string>
+    <string name="pregunta_1">Pregunta 1: ¿A qué continente pertenece Egipto?</string>
+    <string name="africa">África</string>
+    <string name="asia">Asia</string>
+    <string name="europa">Europa</string>
+    <string name="ocean_a">Oceanía</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="borrar">Borrar</string>
+    <string name="pregunta_2">Pregunta 2: ¿En qué continente se encuentra Japón?</string>
+    <string name="pregunta_3">Pregunta 3: ¿A qué continente pertenece Canadá?</string>
+    <string name="pregunta_4">Pregunta 4: ¿En qué continente está situada Alemania?</string>
+</resources>

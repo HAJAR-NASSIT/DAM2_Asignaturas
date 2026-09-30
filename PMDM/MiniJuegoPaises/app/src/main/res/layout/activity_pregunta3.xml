@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:ignore="UseCompoundDrawables">
+
+    <TextView
+        android:id="@+id/txtEleccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:text="@string/pregunta_3"
+        android:textColor="@color/rojo"
+        android:textSize="25dp"
+        tools:ignore="SpUsage,TextSizeCheck" />
+
+    <RadioGroup
+        android:id="@+id/groupProvincias"
+        android:padding="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RadioButton
+            android:id="@+id/africa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/africa"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/Asia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/asia"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/Europa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/europa"
+            android:textStyle="bold"
+            />
+        <RadioButton
+            android:id="@+id/Oceanía"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ocean_a"
+            android:textStyle="bold"
+            />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
+
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/borrar"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/aceptar"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
+    </LinearLayout>
+
+
+</LinearLayout>

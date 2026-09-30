@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="70dp"
+    tools:ignore="UseCompoundDrawables">
+
+    <TextView
+        android:id="@+id/txtEleccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/geograf_a_mundial"
+        android:layout_gravity="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/rojo"/>
+
+    <Button
+        android:id="@+id/btnEmpezar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empezar"
+        android:layout_gravity="center"
+        android:layout_marginTop="400dp"/>
+
+</LinearLayout>
