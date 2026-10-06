@@ -16,11 +16,11 @@ base: number = 5;
 
 sumar() {
 // Usamos .update() para sumarle la base actual de forma reactiva
-this.numero.update(valorActual => valorActual + this.base);
+this.numero.update((valorActual: number) => valorActual + this.base);
 }
 
 restar() {
 // Usamos .update() para restarle la base actual
-this.numero.update(valorActual => valorActual - this.base);
+this.numero.update((valorActual: number) => valorActual - this.base);
 }
 }
