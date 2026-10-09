@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "sumaSueldo": {
+    "Contador": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sumaSueldo:build:production"
+              "buildTarget": "Contador:build:production"
             },
             "development": {
-              "buildTarget": "sumaSueldo:build:development"
+              "buildTarget": "Contador:build:development"
             }
           },
           "defaultConfiguration": "development"
