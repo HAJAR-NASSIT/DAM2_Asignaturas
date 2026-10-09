@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"MultiHilo.Ejercicio_1","l":"HiloRunnable"}];updateSearchResults();
