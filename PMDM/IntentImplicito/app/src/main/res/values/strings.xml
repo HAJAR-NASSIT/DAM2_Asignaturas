@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IntentImplicito</string>
+    <string name="url">URL:</string>
+    <string name="https_www_google_com">https://www.google.com</string>
+    <string name="latitud">Latitud:</string>
+    <string name="_43_26271">43.26271</string>
+    <string name="longitud">Longitud:</string>
+    <string name="_2_92528">-2.92528</string>
+    <string name="ir_a_web">IR A WEB</string>
+    <string name="ejemplo_gmail_com">ejemplo@gmail.com</string>
+    <string name="enviar_email">ENVIAR EMAIL</string>
+    <string name="email">Email:</string>
+    <string name="ir_a_mapa">IR A MAPA</string>
+
+</resources>
