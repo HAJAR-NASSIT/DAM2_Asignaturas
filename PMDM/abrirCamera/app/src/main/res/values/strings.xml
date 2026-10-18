@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">abrirCamera</string>
+    <string name="abrir_youtube">Abrir youtube</string>
+    <string name="abrir_camera">Abrir camera</string>
+</resources>
