@@ -1,0 +1,15 @@
+<div class="juego-contenedor">
+  <h1>🎲 Juego de Tres Dados 🎲</h1>
+
+  <div class="dados-flex">
+    <!-- Enlazamos las variables del padre al atributo [valor] del hijo -->
+    <app-dado [valor]="dado1"></app-dado>
+    <app-dado [valor]="dado2"></app-dado>
+    <app-dado [valor]="dado3"></app-dado>
+  </div>
+
+  <!-- Al hacer clic, ejecutamos la función tirarDados() -->
+  <button (click)="tirarDados()">Tirar Dados</button>
+
+  <p class="texto-resultado">{{ resultado }}</p>
+</div>
