@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppCanciones</string>
+    <string name="t_tulo_de_la_canci_n">Título de la canción</string>
+    <string name="autor_artista">Autor / Artista</string>
+    <string name="url_de_youtube_https">URL de YouTube (https://...)</string>
+    <string name="guardar_canci_n">Guardar Canción</string>
+    <string name="mis_canciones_favoritas">Mis Canciones Favoritas:</string>
+</resources>
